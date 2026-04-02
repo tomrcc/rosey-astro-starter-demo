@@ -17,8 +17,7 @@ hero_block:
   subheading: >-
     A **minimal** starting point for developers looking to build a website with
     Astro, using Editable Regions in CloudCannon. Create your own copy, and
-    start creating your own components to use in the Visual Editor. Change the
-    og.
+    start creating your own components to use in the Visual Editor.
 
 
     Once you've explored this minimal starter, consider taking a look at the
