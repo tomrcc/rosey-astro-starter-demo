@@ -1,0 +1,42 @@
+---
+_schema: default
+title: Der vollständige mehrsprachige Stack
+post_hero:
+  heading: Der vollständige mehrsprachige Stack
+  date: 2025-05-06T10:00:00+12:00
+  tags:
+    - rosey
+    - rcc
+    - cloudcannon
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-5.jpg
+  image_alt: Seitenprofil einer Person, die an einem Laptop arbeitet, ein Telefon in der Hand hält und einen Kaffee neben sich hat.
+thumb_image_path: /src/assets/images/blog/blog-thumb-5.jpg
+thumb_image_alt: Eine Gruppe, die gemeinsam an einem Laptop arbeitet.
+seo:
+  page_description: Wie Rosey, der RCC und CloudCannon zusammenarbeiten, um einen vollständigen mehrsprachigen Bearbeitungsworkflow zu bieten.
+  canonical_url:
+  featured_image: /images/blog/featured-image-5.jpg
+  featured_image_alt: Seitenprofil einer Person, die an einem Laptop arbeitet, ein Telefon in der Hand hält und einen Kaffee neben sich hat.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Rosey, der RCC und CloudCannon übernehmen jeweils eine andere Schicht des mehrsprachigen Workflows. Zusammen bilden sie einen Stack, der eine statische Website von einer einsprachigen Quelle zu einer vollständig übersetzten Ausgabe bringt — mit visueller Bearbeitung dazwischen.
+
+## Die Schichten
+
+- **Rosey** durchsucht erstelltes HTML nach `data-rosey`-Elementen, generiert `base.json` und erstellt übersetzte Kopien der Website aus Locale-Dateien
+- **Der RCC** verbindet Roseys Locale-Dateien mit dem visuellen Editor von CloudCannon und ermöglicht es Editoren, Text direkt auf der Seite inline zu übersetzen
+- **CloudCannon** verwaltet die Locale-JSON-Dateien als Daten, synchronisiert Änderungen zurück ins Repository und löst Neubauten aus
+
+## Die Postbuild-Pipeline
+
+Alles kommt in einem `.cloudcannon/postbuild`-Skript zusammen, das nach jedem CloudCannon-Build ausgeführt wird:
+
+1. `rosey generate` durchsucht die Build-Ausgabe und aktualisiert `base.json`
+2. `write-locales` erstellt oder aktualisiert Locale-JSON-Dateien und schreibt das Manifest `_rcc/locales.json`
+3. `rosey build` erzeugt übersetzte Kopien der Website für jede Locale
+
+Das Ergebnis ist eine vollständig übersetzte statische Website, die automatisch neu erstellt wird, wenn sich Quellinhalte oder Übersetzungen ändern. Editoren arbeiten im visuellen Editor; Rosey erledigt den Rest.

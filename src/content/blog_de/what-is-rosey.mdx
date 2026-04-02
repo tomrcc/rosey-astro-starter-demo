@@ -1,0 +1,43 @@
+---
+_schema: default
+title: Was ist Rosey?
+post_hero:
+  heading: Was ist Rosey?
+  date: 2025-05-08T10:00:00+12:00
+  tags:
+    - rosey
+    - translations
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-3.jpg
+  image_alt: Ein Mann, der in einem schwach beleuchteten Café vor einem Laptop Kaffee trinkt.
+thumb_image_path: /src/assets/images/blog/blog-thumb-3.jpg
+thumb_image_alt: Ein Team, das an einem Tisch an Laptops vor einer Präsentation arbeitet.
+seo:
+  page_description: Eine Einführung in Rosey, das Open-Source-Übersetzungstool für statische Websites, das unabhängig vom Framework funktioniert.
+  canonical_url:
+  featured_image: /images/blog/featured-image-3.jpg
+  featured_image_alt: Ein Mann, der in einem schwach beleuchteten Café vor einem Laptop Kaffee trinkt.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+[Rosey](https://rosey.app) ist ein Open-Source-Übersetzungstool, das mit der erstellten HTML-Ausgabe jeder statischen Website funktioniert — unabhängig vom Framework, das sie generiert hat. Anstatt sich in den Build-Prozess Ihres SSG einzuklinken, arbeitet Rosey als Postbuild-Schritt auf den finalen HTML-Dateien.
+
+## So funktioniert es
+
+Sie markieren übersetzbare Elemente mit `data-rosey`-Attributen direkt in Ihren Templates:
+
+```html
+<h1 data-rosey="hero-title">Welcome to our site</h1>
+```
+
+Die Ausführung von `rosey generate` durchsucht die erstellte Ausgabe und erzeugt `rosey/base.json` — ein Manifest aller übersetzbaren Zeichenketten, indexiert nach ihrem `data-rosey`-Wert. Übersetzungen werden in Locale-Dateien wie `rosey/locales/fr.json` gespeichert, wobei jeder Schlüssel auf ein Objekt mit dem Originaltext und dem übersetzten Wert verweist.
+
+Die Ausführung von `rosey build` erzeugt dann eine vollständig übersetzte Kopie der Website für jede Locale, wobei die übersetzten Werte direkt in das HTML eingesetzt werden.
+
+## Wichtige Konzepte
+
+- **Framework-unabhängig**: Funktioniert mit Astro, Hugo, Eleventy, Next.js — allem, was HTML ausgibt
+- **Namensräume**: Verwenden Sie `data-rosey-ns` und `data-rosey-root`, um Schlüssel hierarchisch zu organisieren (z. B. `index:hero:title`)
+- **Nicht-invasiv**: Rosey verändert niemals Ihre Quelldateien. Es liest die erstellte Ausgabe und schreibt die übersetzten Kopien daneben

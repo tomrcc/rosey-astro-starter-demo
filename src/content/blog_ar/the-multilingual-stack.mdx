@@ -1,0 +1,42 @@
+---
+_schema: default
+title: حزمة الترجمة المتكاملة
+post_hero:
+  heading: حزمة الترجمة المتكاملة
+  date: 2025-05-06T10:00:00+12:00
+  tags:
+    - rosey
+    - rcc
+    - cloudcannon
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-5.jpg
+  image_alt: منظر جانبي لشخص يعمل على حاسوب محمول ويمسك هاتفاً بجانب فنجان قهوة.
+thumb_image_path: /src/assets/images/blog/blog-thumb-5.jpg
+thumb_image_alt: مجموعة تعمل معاً على حاسوب محمول.
+seo:
+  page_description: كيف تعمل Rosey وRCC وCloudCannon معاً لتقديم سير عمل متكامل لتحرير المواقع متعددة اللغات.
+  canonical_url:
+  featured_image: /images/blog/featured-image-5.jpg
+  featured_image_alt: منظر جانبي لشخص يعمل على حاسوب محمول ويمسك هاتفاً بجانب فنجان قهوة.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+تتولى Rosey وRCC وCloudCannon كل منها طبقة مختلفة من سير العمل متعدد اللغات. معاً تشكل حزمة تنقل الموقع الثابت من مصدر أحادي اللغة إلى مخرجات مترجمة بالكامل — مع التحرير المرئي بينهما.
+
+## الطبقات
+
+- **Rosey** تفحص HTML المبني بحثاً عن عناصر `data-rosey`، وتنشئ `base.json`، وتبني نسخاً مترجمة من الموقع من ملفات اللغة
+- **RCC** يربط ملفات لغة Rosey بالمحرر المرئي لـ CloudCannon، مما يتيح للمحررين ترجمة النص مباشرة على الصفحة
+- **CloudCannon** يدير ملفات JSON للغة كبيانات، ويزامن التغييرات مع المستودع، ويشغّل عمليات إعادة البناء
+
+## خط أنابيب ما بعد البناء
+
+يتجمع كل شيء في سكربت `.cloudcannon/postbuild` الذي يُنفّذ بعد كل بناء في CloudCannon:
+
+1. `rosey generate` يفحص مخرجات البناء ويحدّث `base.json`
+2. `write-locales` ينشئ أو يحدّث ملفات JSON للغة ويكتب سجل `_rcc/locales.json`
+3. `rosey build` ينشئ نسخاً مترجمة من الموقع لكل لغة
+
+النتيجة هي موقع ثابت مترجم بالكامل يُعاد بناؤه تلقائياً عند تغيّر المحتوى المصدري أو الترجمات. يعمل المحررون في المحرر المرئي؛ وRosey تتكفل بالباقي.

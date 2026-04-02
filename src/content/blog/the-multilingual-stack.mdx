@@ -1,0 +1,42 @@
+---
+_schema: default
+title: The Complete Multilingual Stack
+post_hero:
+  heading: The Complete Multilingual Stack
+  date: 2025-05-06T10:00:00+12:00
+  tags:
+    - rosey
+    - rcc
+    - cloudcannon
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-5.jpg
+  image_alt: A side-on profile of someone working on a laptop with a phone in their hand, and a coffee next to them.
+thumb_image_path: /src/assets/images/blog/blog-thumb-5.jpg
+thumb_image_alt: A group collaborating around a laptop.
+seo:
+  page_description: How Rosey, the RCC, and CloudCannon work together to provide a complete multilingual editing workflow.
+  canonical_url:
+  featured_image: /images/blog/featured-image-5.jpg
+  featured_image_alt: A side-on profile of someone working on a laptop with a phone in their hand, and a coffee next to them.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Rosey, the RCC, and CloudCannon each handle a different layer of the multilingual workflow. Together they form a stack that takes a static site from monolingual source to fully translated output — with visual editing in between.
+
+## The layers
+
+- **Rosey** scans built HTML for `data-rosey` elements, generates `base.json`, and builds translated copies of the site from locale files
+- **The RCC** connects Rosey's locale files to CloudCannon's Visual Editor, letting editors translate text inline on the page
+- **CloudCannon** manages the locale JSON files as data, syncs edits back to the repository, and triggers rebuilds
+
+## The postbuild pipeline
+
+Everything comes together in a `.cloudcannon/postbuild` script that runs after every CloudCannon build:
+
+1. `rosey generate` scans the build output and updates `base.json`
+2. `write-locales` creates or updates locale JSON files and writes the `_rcc/locales.json` manifest
+3. `rosey build` produces translated copies of the site for each locale
+
+The result is a fully translated static site, rebuilt automatically whenever source content or translations change. Editors work in the Visual Editor; Rosey handles the rest.

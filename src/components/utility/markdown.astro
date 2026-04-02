@@ -1,0 +1,30 @@
+---
+import markdownit from "markdown-it";
+const md = markdownit({ html: true });
+
+interface Props {
+  content: string;
+  dataProp?: string;
+  dataType?: string;
+  dataRosey?: string;
+}
+
+const { content, dataProp, dataType, dataRosey } = Astro.props;
+const markdownContent = content ? md.render(content) : "";
+const roseyAttr = dataRosey ? { "data-rosey": dataRosey } : {};
+---
+
+{
+  dataProp ? (
+    <div
+      class="prose"
+      data-editable="text"
+      data-prop={dataProp}
+      data-type={dataType}
+      {...roseyAttr}
+      set:html={markdownContent}
+    />
+  ) : (
+    <div class="prose" {...roseyAttr} set:html={markdownContent} />
+  )
+}

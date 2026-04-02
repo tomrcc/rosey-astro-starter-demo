@@ -1,0 +1,39 @@
+---
+_schema: default
+title: 使用 RCC 进行可视化翻译编辑
+post_hero:
+  heading: 使用 RCC 进行可视化翻译编辑
+  date: 2025-05-07T10:00:00+12:00
+  tags:
+    - rcc
+    - cloudcannon
+    - visual-editing
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-4.jpg
+  image_alt: 一位女士躺在床上一边喝咖啡一边使用笔记本电脑。
+thumb_image_path: /src/assets/images/blog/blog-thumb-4.jpg
+thumb_image_alt: 四个人在办公环境中围着一台笔记本电脑工作。
+seo:
+  page_description: Rosey CloudCannon Connector 如何在 CloudCannon 中实现可视化内联翻译编辑。
+  canonical_url:
+  featured_image: /images/blog/featured-image-4.jpg
+  featured_image_alt: 一位女士躺在床上一边喝咖啡一边使用笔记本电脑。
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Rosey CloudCannon Connector（RCC）是一个客户端脚本，将 Rosey 的翻译文件与 CloudCannon 的可视化编辑器连接起来。它仅在编辑器内加载，为内容团队提供了一种直接在页面上编辑翻译的方式——无需 JSON 文件，无需切换上下文。
+
+## 语言切换器
+
+RCC 初始化时，会在可视化编辑器中注入一个浮动操作按钮。点击后会弹出一个显示所有可用语言的面板。选择一种语言会将页面内容替换为翻译文本，每个 `data-rosey` 元素上都有内联编辑器。
+
+切换回"原文"会恢复源内容以及 CloudCannon 的全部常规编辑功能。
+
+## 过时翻译检测
+
+当英文原文在翻译完成后发生更改，RCC 会将该翻译标记为过时。过时的元素在编辑器中会显示琥珀色虚线边框，语言切换器会显示计数标记。编辑人员可以通过更新翻译或点击"标记为已审核"来解决过时问题。
+
+## 无需预先配置编辑功能
+
+RCC 会在每个 `data-rosey` 元素上创建自己的内联编辑器——它不依赖现有的可编辑区域、Bookshop 或任何其他 CloudCannon 编辑配置。即使没有任何编辑基础设施的网站也能获得完整的可视化翻译编辑功能。

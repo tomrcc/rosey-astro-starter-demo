@@ -1,0 +1,39 @@
+---
+_schema: default
+title: Visuelle Übersetzungsbearbeitung mit dem RCC
+post_hero:
+  heading: Visuelle Übersetzungsbearbeitung mit dem RCC
+  date: 2025-05-07T10:00:00+12:00
+  tags:
+    - rcc
+    - cloudcannon
+    - visual-editing
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-4.jpg
+  image_alt: Eine Frau, die im Bett vor ihrem Laptop eine Tasse Kaffee trinkt.
+thumb_image_path: /src/assets/images/blog/blog-thumb-4.jpg
+thumb_image_alt: Eine Gruppe von vier Personen, die in einer Büroumgebung vor einem Laptop arbeiten.
+seo:
+  page_description: Wie der Rosey CloudCannon Connector die visuelle Inline-Bearbeitung von Übersetzungen in CloudCannon ermöglicht.
+  canonical_url:
+  featured_image: /images/blog/featured-image-4.jpg
+  featured_image_alt: Eine Frau, die im Bett vor ihrem Laptop eine Tasse Kaffee trinkt.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Der Rosey CloudCannon Connector (RCC) ist ein clientseitiges Skript, das Roseys Übersetzungsdateien mit dem visuellen Editor von CloudCannon verbindet. Es wird nur im Editor geladen und bietet Content-Teams eine Möglichkeit, Übersetzungen direkt auf der Seite zu bearbeiten — ohne JSON-Dateien, ohne Kontextwechsel.
+
+## Der Locale-Umschalter
+
+Wenn sich der RCC initialisiert, fügt er einen schwebenden Aktionsbutton in den visuellen Editor ein. Ein Klick darauf öffnet ein Popover mit allen verfügbaren Locales. Die Auswahl einer Locale ersetzt den Seiteninhalt durch den übersetzten Text, mit Inline-Editoren auf jedem `data-rosey`-Element.
+
+Ein Wechsel zurück zu „Original" stellt den Quellinhalt mit der gesamten normalen Bearbeitungsinfrastruktur von CloudCannon wieder her.
+
+## Erkennung veralteter Übersetzungen
+
+Wenn sich der englische Originaltext ändert, nachdem eine Übersetzung geschrieben wurde, kennzeichnet der RCC diese Übersetzung als veraltet. Veraltete Elemente erhalten im Editor einen gestrichelten bernsteinfarbenen Rahmen, und der Locale-Umschalter zeigt ein Zähler-Badge an. Editoren können die Veralterung beheben, indem sie die Übersetzung aktualisieren oder auf „Als überprüft markieren" klicken.
+
+## Keine Bearbeitungsinfrastruktur erforderlich
+
+Der RCC erstellt seine eigenen Inline-Editoren auf jedem `data-rosey`-Element — er ist nicht auf bestehende editierbare Regionen, Bookshop oder andere CloudCannon-Bearbeitungskonfigurationen angewiesen. Websites ohne jegliche Bearbeitungsinfrastruktur erhalten dennoch vollständige visuelle Übersetzungsbearbeitung.

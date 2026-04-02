@@ -1,0 +1,323 @@
+{
+  "version": 2,
+  "keys": {
+    "404.html": {
+      "original": "404.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "about/index.html": {
+      "original": "about/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/blog/index.html": {
+      "original": "ar/blog/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/blog/the-multilingual-stack/index.html": {
+      "original": "ar/blog/the-multilingual-stack/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/blog/visual-editing-with-the-rcc/index.html": {
+      "original": "ar/blog/visual-editing-with-the-rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/blog/what-is-rosey/index.html": {
+      "original": "ar/blog/what-is-rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/cloudcannon/index.html": {
+      "original": "ar/tags/cloudcannon/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/multilingual/index.html": {
+      "original": "ar/tags/multilingual/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/rcc/index.html": {
+      "original": "ar/tags/rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/rosey/index.html": {
+      "original": "ar/tags/rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/translations/index.html": {
+      "original": "ar/tags/translations/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "ar/tags/visual-editing/index.html": {
+      "original": "ar/tags/visual-editing/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "blog/index.html": {
+      "original": "blog/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "blog/the-multilingual-stack/index.html": {
+      "original": "blog/the-multilingual-stack/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "blog/visual-editing-with-the-rcc/index.html": {
+      "original": "blog/visual-editing-with-the-rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "blog/what-is-rosey/index.html": {
+      "original": "blog/what-is-rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/blog/index.html": {
+      "original": "de/blog/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/blog/the-multilingual-stack/index.html": {
+      "original": "de/blog/the-multilingual-stack/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/blog/visual-editing-with-the-rcc/index.html": {
+      "original": "de/blog/visual-editing-with-the-rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/blog/what-is-rosey/index.html": {
+      "original": "de/blog/what-is-rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/cloudcannon/index.html": {
+      "original": "de/tags/cloudcannon/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/multilingual/index.html": {
+      "original": "de/tags/multilingual/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/rcc/index.html": {
+      "original": "de/tags/rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/rosey/index.html": {
+      "original": "de/tags/rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/translations/index.html": {
+      "original": "de/tags/translations/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "de/tags/visual-editing/index.html": {
+      "original": "de/tags/visual-editing/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/blog/index.html": {
+      "original": "fr/blog/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/blog/the-multilingual-stack/index.html": {
+      "original": "fr/blog/the-multilingual-stack/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/blog/visual-editing-with-the-rcc/index.html": {
+      "original": "fr/blog/visual-editing-with-the-rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/blog/what-is-rosey/index.html": {
+      "original": "fr/blog/what-is-rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/cloudcannon/index.html": {
+      "original": "fr/tags/cloudcannon/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/multilingual/index.html": {
+      "original": "fr/tags/multilingual/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/rcc/index.html": {
+      "original": "fr/tags/rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/rosey/index.html": {
+      "original": "fr/tags/rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/translations/index.html": {
+      "original": "fr/tags/translations/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "fr/tags/visual-editing/index.html": {
+      "original": "fr/tags/visual-editing/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "index.html": {
+      "original": "index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/cloudcannon/index.html": {
+      "original": "tags/cloudcannon/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/multilingual/index.html": {
+      "original": "tags/multilingual/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/rcc/index.html": {
+      "original": "tags/rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/rosey/index.html": {
+      "original": "tags/rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/translations/index.html": {
+      "original": "tags/translations/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "tags/visual-editing/index.html": {
+      "original": "tags/visual-editing/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/blog/index.html": {
+      "original": "zh/blog/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/blog/the-multilingual-stack/index.html": {
+      "original": "zh/blog/the-multilingual-stack/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/blog/visual-editing-with-the-rcc/index.html": {
+      "original": "zh/blog/visual-editing-with-the-rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/blog/what-is-rosey/index.html": {
+      "original": "zh/blog/what-is-rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/cloudcannon/index.html": {
+      "original": "zh/tags/cloudcannon/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/multilingual/index.html": {
+      "original": "zh/tags/multilingual/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/rcc/index.html": {
+      "original": "zh/tags/rcc/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/rosey/index.html": {
+      "original": "zh/tags/rosey/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/translations/index.html": {
+      "original": "zh/tags/translations/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    },
+    "zh/tags/visual-editing/index.html": {
+      "original": "zh/tags/visual-editing/index.html",
+      "value": null,
+      "pages": {},
+      "total": 0
+    }
+  }
+}

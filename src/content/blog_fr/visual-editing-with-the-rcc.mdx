@@ -1,0 +1,39 @@
+---
+_schema: default
+title: Édition visuelle des traductions avec le RCC
+post_hero:
+  heading: Édition visuelle des traductions avec le RCC
+  date: 2025-05-07T10:00:00+12:00
+  tags:
+    - rcc
+    - cloudcannon
+    - visual-editing
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-4.jpg
+  image_alt: Une femme buvant une tasse de café au lit devant son ordinateur portable.
+thumb_image_path: /src/assets/images/blog/blog-thumb-4.jpg
+thumb_image_alt: Un groupe de quatre personnes travaillant devant un ordinateur portable dans un environnement de bureau.
+seo:
+  page_description: Comment le Rosey CloudCannon Connector permet l'édition visuelle en ligne des traductions dans CloudCannon.
+  canonical_url:
+  featured_image: /images/blog/featured-image-4.jpg
+  featured_image_alt: Une femme buvant une tasse de café au lit devant son ordinateur portable.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Le Rosey CloudCannon Connector (RCC) est un script côté client qui fait le lien entre les fichiers de traduction de Rosey et l'éditeur visuel de CloudCannon. Il se charge uniquement dans l'éditeur et offre aux équipes de contenu un moyen de modifier les traductions directement sur la page — sans fichiers JSON, sans changement de contexte.
+
+## Le sélecteur de locale
+
+Lorsque le RCC s'initialise, il injecte un bouton d'action flottant dans l'éditeur visuel. En cliquant dessus, un popover s'affiche avec toutes les locales disponibles. En sélectionner une remplace le contenu de la page pour afficher le texte traduit, avec des éditeurs en ligne sur chaque élément `data-rosey`.
+
+Revenir à « Original » restaure le contenu source avec toute l'infrastructure d'édition normale de CloudCannon intacte.
+
+## Détection des traductions obsolètes
+
+Lorsque le texte anglais original change après qu'une traduction a été écrite, le RCC signale cette traduction comme obsolète. Les éléments obsolètes reçoivent une bordure en pointillés ambrée dans l'éditeur, et le sélecteur de locale affiche un badge de comptage. Les éditeurs peuvent résoudre l'obsolescence en mettant à jour la traduction ou en cliquant sur « Marquer comme révisé ».
+
+## Aucune infrastructure d'édition requise
+
+Le RCC crée ses propres éditeurs en ligne sur chaque élément `data-rosey` — il ne dépend pas des régions éditables existantes, de Bookshop ou de toute autre configuration d'édition CloudCannon. Les sites sans aucune infrastructure d'édition bénéficient tout de même d'une édition visuelle complète des traductions.

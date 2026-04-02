@@ -1,0 +1,61 @@
+---
+import BlogList from "../../../../components/blog/list.astro";
+import BlogPagination from "../../../../components/blog/pagination";
+import Layout from "../../../../layouts/Layout.astro";
+import { getCollection, getEntry } from "astro:content";
+import { locales, localeCodes } from "../../../../lib/locales";
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const page = await getEntry("pages", "blog");
+  if (!page) return [];
+
+  const paths = [];
+  for (const locale of localeCodes) {
+    const collectionName = locales[locale].collection;
+    const posts = await getCollection(collectionName);
+    const tags: Record<string, boolean> = {};
+    for (const post of posts) {
+      for (const tag of post.data.post_hero.tags) {
+        tags[tag] = true;
+      }
+    }
+    for (const tag of Object.keys(tags)) {
+      const filteredPosts = posts.filter(({ data }) =>
+        data.post_hero.tags.includes(tag),
+      );
+      const paginated = paginate(filteredPosts, {
+        params: { locale, tag },
+        pageSize: "page_size" in page.data ? page.data.page_size : 6,
+      });
+      paths.push(...paginated);
+    }
+  }
+  return paths;
+}
+
+const locale = Astro.params.locale!;
+const tag = Astro.params.tag ?? "";
+const page = (await getEntry("pages", "blog"))?.data;
+
+if (!page) {
+  throw new Error("Failed to get blog page data");
+}
+
+const title = tag[0].toUpperCase() + tag.slice(1);
+const pagination = Astro.props.page;
+const filteredPosts = pagination.data;
+const basePath = `/${locale}/tags/${tag}`;
+const roseyRoot = `tags/${tag}`;
+---
+
+<Layout title={title} seo={page.seo} roseyRoot={roseyRoot}>
+  <div class="mx-auto max-w-6xl px-8 py-16">
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">
+      {title}
+    </h1>
+    <section>
+      <BlogList posts={filteredPosts} locale={locale} />
+      <BlogPagination pagination={pagination} basePath={basePath} />
+    </section>
+  </div>
+</Layout>

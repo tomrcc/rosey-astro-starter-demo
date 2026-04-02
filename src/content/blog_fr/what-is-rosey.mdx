@@ -1,0 +1,43 @@
+---
+_schema: default
+title: Qu'est-ce que Rosey ?
+post_hero:
+  heading: Qu'est-ce que Rosey ?
+  date: 2025-05-08T10:00:00+12:00
+  tags:
+    - rosey
+    - translations
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-3.jpg
+  image_alt: Un homme buvant un café dans un café faiblement éclairé devant un ordinateur portable.
+thumb_image_path: /src/assets/images/blog/blog-thumb-3.jpg
+thumb_image_alt: Une équipe travaillant autour d'une table sur des ordinateurs portables devant une présentation.
+seo:
+  page_description: Une introduction à Rosey, l'outil de traduction open source et indépendant du framework pour les sites statiques.
+  canonical_url:
+  featured_image: /images/blog/featured-image-3.jpg
+  featured_image_alt: Un homme buvant un café dans un café faiblement éclairé devant un ordinateur portable.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+[Rosey](https://rosey.app) est un outil de traduction open source qui fonctionne sur la sortie HTML construite de n'importe quel site statique — quel que soit le framework qui l'a généré. Plutôt que de s'intégrer au processus de build de votre SSG, Rosey intervient comme une étape post-build sur les fichiers HTML finaux.
+
+## Comment ça fonctionne
+
+Vous marquez les éléments traduisibles avec des attributs `data-rosey` directement dans vos templates :
+
+```html
+<h1 data-rosey="hero-title">Welcome to our site</h1>
+```
+
+L'exécution de `rosey generate` parcourt la sortie construite et produit `rosey/base.json` — un manifeste de toutes les chaînes traduisibles indexées par leur valeur `data-rosey`. Les traductions sont stockées dans des fichiers de locale comme `rosey/locales/fr.json`, où chaque clé correspond à un objet contenant le texte original et la valeur traduite.
+
+L'exécution de `rosey build` produit ensuite une copie traduite complète du site pour chaque locale, en substituant les valeurs traduites directement dans le HTML.
+
+## Concepts clés
+
+- **Indépendant du framework** : Fonctionne avec Astro, Hugo, Eleventy, Next.js — tout ce qui produit du HTML
+- **Espaces de noms** : Utilisez `data-rosey-ns` et `data-rosey-root` pour organiser les clés de manière hiérarchique (ex. `index:hero:title`)
+- **Non invasif** : Rosey ne touche jamais vos fichiers source. Il lit la sortie construite et écrit les copies traduites à côté

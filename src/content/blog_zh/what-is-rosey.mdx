@@ -1,0 +1,43 @@
+---
+_schema: default
+title: 什么是 Rosey？
+post_hero:
+  heading: 什么是 Rosey？
+  date: 2025-05-08T10:00:00+12:00
+  tags:
+    - rosey
+    - translations
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-3.jpg
+  image_alt: 一位男士在灯光昏暗的咖啡馆里一边喝咖啡一边使用笔记本电脑。
+thumb_image_path: /src/assets/images/blog/blog-thumb-3.jpg
+thumb_image_alt: 一个团队在演示文稿前围坐在桌子旁使用笔记本电脑工作。
+seo:
+  page_description: Rosey 简介——一款开源的、与框架无关的静态网站翻译工具。
+  canonical_url:
+  featured_image: /images/blog/featured-image-3.jpg
+  featured_image_alt: 一位男士在灯光昏暗的咖啡馆里一边喝咖啡一边使用笔记本电脑。
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+[Rosey](https://rosey.app) 是一款开源翻译工具，可处理任何静态网站的 HTML 构建输出——无论使用哪种框架生成。Rosey 不会介入静态网站生成器的构建流程，而是作为构建后步骤处理最终的 HTML 文件。
+
+## 工作原理
+
+在模板中用 `data-rosey` 属性标记可翻译元素：
+
+```html
+<h1 data-rosey="hero-title">Welcome to our site</h1>
+```
+
+运行 `rosey generate` 会扫描构建输出并生成 `rosey/base.json`——一份按 `data-rosey` 值索引的所有可翻译字符串清单。翻译存储在语言文件中，如 `rosey/locales/zh.json`，每个键对应一个包含原文和译文的对象。
+
+运行 `rosey build` 会为每种语言生成一份完整翻译的网站副本，将译文直接插入 HTML。
+
+## 关键概念
+
+- **框架无关**：适用于 Astro、Hugo、Eleventy、Next.js——任何输出 HTML 的工具
+- **命名空间**：使用 `data-rosey-ns` 和 `data-rosey-root` 分层组织键（例如 `index:hero:title`）
+- **非侵入式**：Rosey 绝不修改源文件。它读取构建输出，将翻译副本写在旁边

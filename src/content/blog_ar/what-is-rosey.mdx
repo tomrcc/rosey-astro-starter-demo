@@ -1,0 +1,43 @@
+---
+_schema: default
+title: ما هو Rosey؟
+post_hero:
+  heading: ما هو Rosey؟
+  date: 2025-05-08T10:00:00+12:00
+  tags:
+    - rosey
+    - translations
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-3.jpg
+  image_alt: رجل يشرب القهوة أمام حاسوبه المحمول في مقهى ذي إضاءة خافتة.
+thumb_image_path: /src/assets/images/blog/blog-thumb-3.jpg
+thumb_image_alt: فريق يعمل على حواسيب محمولة حول طاولة أمام عرض تقديمي.
+seo:
+  page_description: مقدمة عن Rosey، أداة الترجمة مفتوحة المصدر للمواقع الثابتة التي تعمل بشكل مستقل عن إطار العمل.
+  canonical_url:
+  featured_image: /images/blog/featured-image-3.jpg
+  featured_image_alt: رجل يشرب القهوة أمام حاسوبه المحمول في مقهى ذي إضاءة خافتة.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+[Rosey](https://rosey.app) هي أداة ترجمة مفتوحة المصدر تعمل مع مخرجات HTML المبنية لأي موقع ثابت — بغض النظر عن إطار العمل الذي أنشأه. بدلاً من الاندماج في عملية بناء مولّد الموقع الثابت، تعمل Rosey كخطوة ما بعد البناء على ملفات HTML النهائية.
+
+## كيف تعمل
+
+تقوم بوسم العناصر القابلة للترجمة بسمات `data-rosey` مباشرة في القوالب الخاصة بك:
+
+```html
+<h1 data-rosey="hero-title">Welcome to our site</h1>
+```
+
+تشغيل `rosey generate` يفحص المخرجات المبنية وينشئ `rosey/base.json` — وهو سجل لجميع السلاسل النصية القابلة للترجمة، مفهرسة حسب قيمة `data-rosey`. يتم تخزين الترجمات في ملفات اللغة مثل `rosey/locales/ar.json`، حيث يشير كل مفتاح إلى كائن يحتوي على النص الأصلي والقيمة المترجمة.
+
+تشغيل `rosey build` ينشئ بعد ذلك نسخة مترجمة بالكامل من الموقع لكل لغة، حيث يتم إدراج القيم المترجمة مباشرة في HTML.
+
+## المفاهيم الأساسية
+
+- **مستقل عن إطار العمل**: يعمل مع Astro وHugo وEleventy وNext.js — أي شيء ينتج HTML
+- **مساحات الأسماء**: استخدم `data-rosey-ns` و`data-rosey-root` لتنظيم المفاتيح بشكل هرمي (مثل `index:hero:title`)
+- **غير تدخلي**: لا تعدّل Rosey أبداً ملفاتك المصدرية. تقرأ المخرجات المبنية وتكتب النسخ المترجمة بجانبها

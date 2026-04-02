@@ -1,0 +1,42 @@
+---
+_schema: default
+title: 完整的多语言技术栈
+post_hero:
+  heading: 完整的多语言技术栈
+  date: 2025-05-06T10:00:00+12:00
+  tags:
+    - rosey
+    - rcc
+    - cloudcannon
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-5.jpg
+  image_alt: 一个人侧面使用笔记本电脑，手持手机，旁边放着一杯咖啡。
+thumb_image_path: /src/assets/images/blog/blog-thumb-5.jpg
+thumb_image_alt: 一群人围在一台笔记本电脑前协同工作。
+seo:
+  page_description: Rosey、RCC 和 CloudCannon 如何协同工作，提供完整的多语言编辑工作流。
+  canonical_url:
+  featured_image: /images/blog/featured-image-5.jpg
+  featured_image_alt: 一个人侧面使用笔记本电脑，手持手机，旁边放着一杯咖啡。
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+Rosey、RCC 和 CloudCannon 各自负责多语言工作流的不同层面。它们共同构成一个技术栈，将静态网站从单语源代码转化为完整翻译的输出——中间还有可视化编辑。
+
+## 各层职责
+
+- **Rosey** 扫描构建后的 HTML 查找 `data-rosey` 元素，生成 `base.json`，并从语言文件构建翻译版本的网站
+- **RCC** 将 Rosey 的语言文件连接到 CloudCannon 的可视化编辑器，让编辑人员可以直接在页面上翻译文本
+- **CloudCannon** 将语言 JSON 文件作为数据进行管理，将更改同步回代码仓库，并触发重新构建
+
+## 构建后流水线
+
+一切汇聚在 `.cloudcannon/postbuild` 脚本中，该脚本在每次 CloudCannon 构建后运行：
+
+1. `rosey generate` 扫描构建输出并更新 `base.json`
+2. `write-locales` 创建或更新语言 JSON 文件，并写入 `_rcc/locales.json` 清单
+3. `rosey build` 为每种语言生成翻译后的网站副本
+
+最终结果是一个完全翻译的静态网站，当源内容或翻译发生变化时自动重建。编辑人员在可视化编辑器中工作，Rosey 处理其余一切。

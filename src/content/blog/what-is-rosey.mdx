@@ -1,0 +1,43 @@
+---
+_schema: default
+title: What is Rosey?
+post_hero:
+  heading: What is Rosey?
+  date: 2025-05-08T10:00:00+12:00
+  tags:
+    - rosey
+    - translations
+    - multilingual
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-3.jpg
+  image_alt: A man drinking a coffee in a dimly lit cafe in front of a laptop.
+thumb_image_path: /src/assets/images/blog/blog-thumb-3.jpg
+thumb_image_alt: A team working around a table on laptops in front of a powerpoint.
+seo:
+  page_description: An introduction to Rosey, the open-source framework-agnostic translation tool for static sites.
+  canonical_url:
+  featured_image: /images/blog/featured-image-3.jpg
+  featured_image_alt: A man drinking a coffee in a dimly lit cafe in front of a laptop.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+[Rosey](https://rosey.app) is an open-source translation tool that works on any static site's built HTML output — regardless of the framework that generated it. Rather than hooking into your SSG's build process, Rosey operates as a postbuild step on the final HTML files.
+
+## How it works
+
+You mark translatable elements with `data-rosey` attributes directly in your templates:
+
+```html
+<h1 data-rosey="hero-title">Welcome to our site</h1>
+```
+
+Running `rosey generate` scans the built output and produces `rosey/base.json` — a manifest of every translatable string keyed by its `data-rosey` value. Translations live in locale files like `rosey/locales/fr.json`, where each key maps to an object containing the original text and the translated value.
+
+Running `rosey build` then produces a complete translated copy of the site for each locale, substituting the translated values directly into the HTML.
+
+## Key concepts
+
+- **Framework-agnostic**: Works with Astro, Hugo, Eleventy, Next.js — anything that outputs HTML
+- **Namespacing**: Use `data-rosey-ns` and `data-rosey-root` to organize keys hierarchically (e.g. `index:hero:title`)
+- **Non-invasive**: Rosey never touches your source files. It reads from the build output and writes translated copies alongside it

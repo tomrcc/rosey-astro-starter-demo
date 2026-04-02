@@ -1,0 +1,33 @@
+---
+import PostLayout from "../../../layouts/Post.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import { locales, localeCodes } from "../../../lib/locales";
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const locale of localeCodes) {
+    const collectionName = locales[locale].collection;
+    const posts = await getCollection(collectionName);
+    for (const post of posts) {
+      paths.push({
+        params: { locale, slug: post.id },
+        props: { locale, collectionName },
+      });
+    }
+  }
+  return paths;
+}
+
+const { locale, collectionName } = Astro.props;
+const slug = Astro.params.slug!;
+const post = await getEntry(collectionName, slug);
+if (!post) {
+  throw new Error(`Failed to get post "${slug}" from ${collectionName}`);
+}
+const { Content } = await render(post);
+const roseyRoot = `blog/${slug}`;
+---
+
+<PostLayout frontmatter={post.data} body={post.body} locale={locale} roseyRoot={roseyRoot}>
+  <Content />
+</PostLayout>

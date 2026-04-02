@@ -1,0 +1,39 @@
+---
+_schema: default
+title: Visual Translation Editing with the RCC
+post_hero:
+  heading: Visual Translation Editing with the RCC
+  date: 2025-05-07T10:00:00+12:00
+  tags:
+    - rcc
+    - cloudcannon
+    - visual-editing
+  author: T Richardson
+  image: /src/assets/images/blog/featured-image-4.jpg
+  image_alt: A woman drinking a cup of coffee in bed in front of her laptop.
+thumb_image_path: /src/assets/images/blog/blog-thumb-4.jpg
+thumb_image_alt: A group of four people working in front of one laptop in an office environment.
+seo:
+  page_description: How the Rosey CloudCannon Connector enables inline visual editing of translations in CloudCannon.
+  canonical_url:
+  featured_image: /images/blog/featured-image-4.jpg
+  featured_image_alt: A woman drinking a cup of coffee in bed in front of her laptop.
+  author_twitter_handle:
+  open_graph_type: article
+  no_index: false
+---
+The Rosey CloudCannon Connector (RCC) is a client-side script that bridges Rosey's translation files with CloudCannon's Visual Editor. It loads only inside the editor and gives content teams a way to edit translations directly on the page — no JSON files, no context-switching.
+
+## The locale switcher
+
+When the RCC initializes, it injects a floating action button into the Visual Editor. Clicking it reveals a popover with every available locale. Selecting one swaps the page content to show translated text, with inline editors on each `data-rosey` element.
+
+Switching back to "Original" restores the source content with all of CloudCannon's normal editing infrastructure intact.
+
+## Stale translation detection
+
+When the original English text changes after a translation was written, the RCC flags that translation as stale. Stale elements get an amber dashed border in the editor, and the locale switcher shows a count badge. Editors can resolve staleness by updating the translation or clicking "Mark as reviewed."
+
+## No editing infrastructure required
+
+The RCC creates its own inline editors on every `data-rosey` element — it does not depend on existing editable regions, Bookshop, or any other CloudCannon editing setup. Sites with zero editing infrastructure still get full visual translation editing.
