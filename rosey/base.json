@@ -346,7 +346,7 @@
       "total": 1
     },
     "index:hero:subheading": {
-      "original": "<p>A <strong>minimal</strong> starting point for developers looking to build a website with Astro, using Editable Regions in CloudCannon. Create your own copy, and start creating your own components to use in the Visual Editor. Change the og.</p>\n<p>Once you've explored this minimal starter, consider taking a look at the <a href=\"https://github.com/CloudCannon/astro-component-starter\">Astro Component Starter</a> to assist in building out your components.</p>\n",
+      "original": "<p>A <strong>minimal</strong> starting point for developers looking to build a website with Astro, using Editable Regions in CloudCannon. Create your own copy, and start creating your own components to use in the Visual Editor.</p>\n<p>Once you've explored this minimal starter, consider taking a look at the <a href=\"https://github.com/CloudCannon/astro-component-starter\">Astro Component Starter</a> to assist in building out your components.</p>\n",
       "value": null,
       "pages": {
         "index.html": 1
